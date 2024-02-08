@@ -28,6 +28,11 @@ function HTML_TEMPLATE(user,token){
                 text-align: center;
                 color: #007bff;
             }
+            .token{
+                text-align: center;
+                color: #007bff;
+                border: 2px #007bff solid;
+            }
     
             p {
                 margin-bottom: 20px;
@@ -56,18 +61,8 @@ function HTML_TEMPLATE(user,token){
         <div class="container">
             <h1>Password Reset</h1>
             <p>Hello ${user},</p>
-            <p>You have requested a password reset. Please click the button below to reset your password:</p>
-            <button class="btn" onClick='function copyToken() {
-                // Get the text field
-                var token = "${token}";
-                  
-                console.log("Success");
-              document.getElementById("success-p").style.display = "inline";
-                 // Copy the text inside the text field
-                navigator.clipboard.writeText(token);
-                
-                    
-              } copyToken();'>Copy Token</button>
+            <p>You have requested a password reset. Please copy the following token:</p>
+            <h1 class="token">${token}</h1>
             <p class="success" id="success-p">Copied to clipboard!</p>
             <p>If you did not request a password reset, please ignore this email.</p>
             <p>Thank you!</p>
