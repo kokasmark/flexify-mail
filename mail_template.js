@@ -57,7 +57,7 @@ function HTML_TEMPLATE(user,token){
             <h1>Password Reset</h1>
             <p>Hello ${user},</p>
             <p>You have requested a password reset. Please click the button below to reset your password:</p>
-            <button class="btn" onclick='function copyToken() {
+            <button class="btn" onClick='function copyToken() {
                 // Get the text field
                 var token = "${token}";
                   
