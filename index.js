@@ -1,6 +1,7 @@
 const mail_template = require("./mail_template")
 const mailer = require("./mail_service")
 const express = require('express');
+const cors = require('cors')
 
 const app = express();
 app.use(cors());
