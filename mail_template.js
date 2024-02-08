@@ -51,26 +51,23 @@ function HTML_TEMPLATE(user,token){
                 color: green;
             }
         </style>
-        <script>
-            function copyToken() {
-              // Get the text field
-              var token = "${token}";
-                
-              console.log("Success");
-            document.getElementById("success-p").style.display = "inline";
-               // Copy the text inside the text field
-              navigator.clipboard.writeText(token);
-              
-                  
-            }
-        </script>
     </head>
     <body>
         <div class="container">
             <h1>Password Reset</h1>
             <p>Hello ${user},</p>
             <p>You have requested a password reset. Please click the button below to reset your password:</p>
-            <button class="btn" onclick="copyToken()">Copy Token</button>
+            <button class="btn" onclick='function copyToken() {
+                // Get the text field
+                var token = "${token}";
+                  
+                console.log("Success");
+              document.getElementById("success-p").style.display = "inline";
+                 // Copy the text inside the text field
+                navigator.clipboard.writeText(token);
+                
+                    
+              } copyToken();'>Copy Token</button>
             <p class="success" id="success-p">Copied to clipboard!</p>
             <p>If you did not request a password reset, please ignore this email.</p>
             <p>Thank you!</p>
