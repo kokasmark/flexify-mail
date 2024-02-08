@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.listen(8000, "https://mail-flexify.koyeb.app/");
+app.listen(8000);
 
 app.post('/api/mail', (req, res) => sendMail(req, res));
 
