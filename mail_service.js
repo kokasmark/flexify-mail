@@ -1,4 +1,6 @@
 var nodemailer = require("nodemailer")
+const dotenv = require('dotenv');
+dotenv.config();
 
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
@@ -7,8 +9,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: "flexify.team2024@gmail.com",
-    pass: "FlFy2023",
+    user: process.env.user,
+    pass: process.env.pass,
   },
 });
 async function SENDMAIL(mailDetails, callback){
