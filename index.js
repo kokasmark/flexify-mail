@@ -15,7 +15,12 @@ app.use(express.urlencoded({extended: true}));
 app.listen(8000);
 
 app.post('/api/mail', (req, res) => sendMail(req, res));
+app.get('/', (req, res) => testService(req, res))
 
+
+function testService(req, res){
+    res.send('Service is working')
+}
 
 async function sendMail(req, res){
     let data = req.body
