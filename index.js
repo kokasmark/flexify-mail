@@ -19,7 +19,7 @@ app.post('/api/mail', (req, res) => sendMail(req, res));
 
 async function sendMail(req, res){
     let data = req.body
-    if (!await compareHash(process.env.token, req.body.token)) return res.json({success: false})
+    if (!await compareHash(process.env.token, data.email_token)) return res.json({success: false})
 
 
     const options = {
